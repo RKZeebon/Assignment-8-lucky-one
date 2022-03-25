@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Product from './product/Product';
 import Cart from '../Cart/Cart'
 import './Products.css'
+import Picked from '../Cart/Picked/Picked';
 
 const Products = () => {
     const [products, setProducts] = useState([])
@@ -13,15 +14,43 @@ const Products = () => {
 
     const [selectedItems, setSelectedItems] = useState([])
     const addToCart = product => {
-        const items = [...selectedItems, product]
-        if (selectedItems.length < 4) {
-            setSelectedItems(items);
+        if (selectedItems.includes(product)) {
+
+        }
+        else {
+            const items = [...selectedItems, product]
+            if (selectedItems.length < 4) {
+                setSelectedItems(items);
+            }
         }
     }
+
+
+    const [pickedItem, setPickedItem] = useState([])
+    function randomNumber(max) {
+
+        let randomNumber = Math.random() * max - 1
+        let result = Math.floor(randomNumber) + 1;
+        return result;
+    }
+    function picker(number) {
+        let index = randomNumber(number)
+        return index;
+    }
+    const chooseOne = () => {
+        if (selectedItems.length > 1) {
+            const pickerValue = selectedItems.length
+            const chooseditem = selectedItems[picker(pickerValue)];
+            setPickedItem(chooseditem);
+        }
+
+    }
+
 
     const resetCart = () => {
         const emptyCart = []
         setSelectedItems(emptyCart)
+        setPickedItem(emptyCart)
     }
 
     return (
@@ -45,10 +74,12 @@ const Products = () => {
                         ></Cart>)
                     }
                     <div className='cart-btn'>
-                        <button>Choose One</button>
+                        <button onClick={chooseOne}>Choose One</button>
                         <button onClick={resetCart} id='cart-btn2'>Reset Cart</button>
                     </div>
+                    <Picked item={pickedItem}></Picked>
                 </div>
+
             </div>
         </div>
     );
