@@ -19,6 +19,11 @@ const Products = () => {
         }
     }
 
+    const resetCart = () => {
+        const emptyCart = []
+        setSelectedItems(emptyCart)
+    }
+
     return (
         <div className='main-area'>
             <div className='products'>
@@ -41,7 +46,7 @@ const Products = () => {
                     }
                     <div className='cart-btn'>
                         <button>Choose One</button>
-                        <button id='cart-btn2'>Reset Cart</button>
+                        <button onClick={resetCart} id='cart-btn2'>Reset Cart</button>
                     </div>
                 </div>
             </div>
