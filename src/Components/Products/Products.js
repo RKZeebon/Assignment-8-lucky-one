@@ -23,34 +23,31 @@ const Products = () => {
                 setSelectedItems(items);
             }
         }
+        setPickedItem([])
     }
 
 
     const [pickedItem, setPickedItem] = useState([])
     function randomNumber(max) {
-
         let randomNumber = Math.random() * max - 1
         let result = Math.floor(randomNumber) + 1;
         return result;
     }
-    function picker(number) {
-        let index = randomNumber(number)
-        return index;
-    }
+
     const chooseOne = () => {
         if (selectedItems.length > 1) {
-            const pickerValue = selectedItems.length
-            const chooseditem = selectedItems[picker(pickerValue)];
-            setPickedItem(chooseditem);
+            const choosenitem = selectedItems[randomNumber(selectedItems.length)];
+            setPickedItem(choosenitem);
+            const emptyCart = []
+            setSelectedItems(emptyCart)
         }
 
     }
 
 
     const resetCart = () => {
-        const emptyCart = []
-        setSelectedItems(emptyCart)
-        setPickedItem(emptyCart)
+        setSelectedItems([])
+        setPickedItem([])
     }
 
     return (
@@ -66,7 +63,7 @@ const Products = () => {
             </div>
             <div>
                 <div className='carts'>
-                    <h3>Selected Items:</h3>
+                    <h4>Selected Items:</h4>
                     {
                         selectedItems.map(selectedItem => <Cart
                             key={selectedItem.model}

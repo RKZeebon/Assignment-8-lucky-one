@@ -6,10 +6,10 @@ const Picked = (props) => {
     return (
 
         <div>
-            <h3>Randomly Picked:</h3>
+            <h4>Randomly Picked:</h4>
             <div className='picked-item'>
-                <img src={img} alt="" />
-                <h4>{name}</h4>
+                <img src={img} alt="" style={{ display: img ? 'block' : 'none' }} />
+                <h2>{name}</h2>
             </div>
         </div>
     );
