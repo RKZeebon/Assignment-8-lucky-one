@@ -3,6 +3,8 @@ import Product from './product/Product';
 import Cart from '../Cart/Cart'
 import './Products.css'
 import Picked from '../Cart/Picked/Picked';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
 const Products = () => {
     const [products, setProducts] = useState([])
@@ -72,7 +74,7 @@ const Products = () => {
                     }
                     <div className='cart-btn'>
                         <button onClick={chooseOne}>Choose One</button>
-                        <button onClick={resetCart} id='cart-btn2'>Reset Cart</button>
+                        <button onClick={resetCart} id='cart-btn2'><FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon> Reset Cart</button>
                     </div>
                     <Picked item={pickedItem}></Picked>
                 </div>
