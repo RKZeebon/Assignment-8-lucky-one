@@ -1,20 +1,11 @@
 .cart{
-    position: sticky;
-    top: 0;
-
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-button{
-    display: block;
-    border: none;
-    width: 100%;
-    margin: 10px 0;
-    padding: 15px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    background-color: rgb(197, 194, 194);
-}
-button:hover{
-    color: rgb(197, 194, 194);
-    background-color: black;
+.cart img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
