@@ -3,7 +3,8 @@ import Products from './Components/Products/Products';
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <h1>Patti owla Buyer</h1>
       <Products></Products>
     </div>
   );
