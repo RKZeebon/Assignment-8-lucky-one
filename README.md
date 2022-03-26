@@ -1,4 +1,4 @@
-## Item Picker
+# Item Picker
 
-# Get Started with [Item Picker](https://item-picker.netlify.app/).
+## Get Started with [Item Picker](https://item-picker.netlify.app/).
 
